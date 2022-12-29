@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Nacionalidade</title>
+    <style>
+        h1 {
+            font: bold 40px Arial;
+            background-color: rgb(77, 170, 68);
+            line-height: 75px;
+            text-align: center;
+        }
+        input {
+            font: normal 20px Arial;
+        }
+        body {
+            font: normal 20px Arial;
+            text-align: center;
+        }
+        div#res {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Brasileiro</h1>
+    <p>Qual pais você nasceu?</p>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="verificador()">
+    <div id="res"></div>
+    <script>
+        
+        function verificador(){
+            var txtp = document.querySelector('input#txtpais')
+            var pais = String(txtp.value)
+            var res = document.querySelector('div#res')
+            res.innerHTML=`Vivendo em ${pais}`
+            if(pais=='Brasil' || pais =='brasil') {
+                res.innerHTML+=', você é <strong>Brasileiro!</strong>'
+            }
+            else {
+                res.innerHTML+=',você é <strong>Estrangeiro!</strong>'
+            }
+        }
+    </script>
+</body>
+</html>
